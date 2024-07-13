@@ -40,7 +40,7 @@ export function CollapsibleDemo({ items }: CollapsibleDemoProps) {
   };
 
   return (
-    <div className="w-full space-y-4 ">
+    <div className="w-full space-y-2 ">
       {items.map((item, index) => (
         <Collapsible
           key={index}
@@ -50,7 +50,7 @@ export function CollapsibleDemo({ items }: CollapsibleDemoProps) {
         >
           <div
             className={cn(
-              "flex flex-col bg-zinc-50    space-x-2 px-4 py-2 border-b border-zinc-900/20 ",
+              "flex flex-col bg-zinc-50    space-x-2 px-4 pb-2 border-b border-zinc-900/20 ",
               {
                 "border-none": openItems[index],
               }

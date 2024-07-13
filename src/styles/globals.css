@@ -74,3 +74,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.header {
+  @apply px-4 py-3 text-center text-xs font-semibold text-white uppercase tracking-wider;
+}

@@ -1,5 +1,6 @@
 import ContentBlock from "@/components/contentBlock";
 import H1 from "@/components/h1";
+import { SignedIn, SignOutButton, UserButton } from "@clerk/nextjs";
 
 export default async function Page() {
   return (
@@ -8,7 +9,13 @@ export default async function Page() {
 
       <ContentBlock className="h-[500px] flex flex-col gap-3 justify-center items-center ">
         <p>Logged in as...</p>
+        <SignedIn>
+          <SignOutButton>
+            <UserButton showName />
+          </SignOutButton>
+        </SignedIn>
       </ContentBlock>
     </main>
   );
 }
+
