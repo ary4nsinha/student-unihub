@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Logo from "./logo";
-import { SignedIn, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignOutButton, UserButton } from "@clerk/nextjs";
 
 const routes = [
   {
@@ -26,7 +26,7 @@ export default function AppHeader() {
     <header className="flex items-center border-b border-white/10 justify-between py-2">
       <Logo />
       <nav>
-        <ul className="flex gap-4 text-md">
+        <ul className="flex gap-4 text-md items-center">
           {routes.map((route) => (
             <li key={route.path}>
               <Link
@@ -44,7 +44,6 @@ export default function AppHeader() {
           ))}
         </ul>
       </nav>
-      
     </header>
   );
 }

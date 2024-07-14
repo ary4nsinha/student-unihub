@@ -7,15 +7,20 @@ export default async function Page() {
     <main>
       <H1 className="my-8 text-white">Your Account</H1>
 
-      <ContentBlock className="h-[500px] flex flex-col gap-3 justify-center items-center ">
+      <ContentBlock className="h-[500px] flex w flex-col gap-3 justify-center items-center ">
         <p>Logged in as...</p>
         <SignedIn>
           <SignOutButton>
-            <UserButton showName />
+            <UserButton 
+              appearance={{
+                elements: {
+                  userButtonAvatarBox: " w-24 h-24",
+                },
+              }}
+            />
           </SignOutButton>
         </SignedIn>
       </ContentBlock>
     </main>
   );
 }
-

@@ -1,0 +1,40 @@
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+        
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Branch {
+  id       Int        @id @default(autoincrement())
+  name     String     @unique
+  semesters Semester[]
+  subjects  Subject[]
+}
+
+model Semester {
+  id       Int       @id @default(autoincrement())
+  number   Int
+  branchId Int
+  branch   Branch    @relation(fields: [branchId], references: [id])
+  subjects Subject[]
+
+  @@unique([number, branchId])
+}
+
+model Subject {
+  id         Int      @id @default(autoincrement())
+  name       String
+  creditValue Float
+  semesterId Int
+  semester   Semester @relation(fields: [semesterId], references: [id])
+  branchId   Int
+  branch     Branch   @relation(fields: [branchId], references: [id])
+
+  @@unique([name, semesterId, branchId])
+}

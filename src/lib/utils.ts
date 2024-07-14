@@ -61,8 +61,9 @@ export const getGradeColor = (grade: string) => {
     case "A":
       return "text-green-500";
     case "B+":
+      return " text-green-400"
     case "B":
-      return "text-green-400";
+      return "text-yellow-500";
     case "C+":
       return "text-yellow-400";
     case "D":

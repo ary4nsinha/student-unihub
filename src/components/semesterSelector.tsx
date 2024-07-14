@@ -1,5 +1,4 @@
-import * as React from "react"
-
+import * as React from "react";
 import {
   Select,
   SelectContent,
@@ -8,11 +7,11 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 
-export function SelectSemester() {
+export function SelectSemester({ onValueChange }: { onValueChange: (value: string) => void }) {
   return (
-    <Select>
+    <Select onValueChange={onValueChange}>
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Select Semester" />
       </SelectTrigger>
@@ -30,5 +29,5 @@ export function SelectSemester() {
         </SelectGroup>
       </SelectContent>
     </Select>
-  )
+  );
 }
