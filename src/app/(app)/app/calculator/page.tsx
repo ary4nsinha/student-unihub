@@ -1,10 +1,11 @@
-"use client"
+"use client";
 import { useState } from "react";
 import ContentBlock from "@/components/contentBlock";
-import { SelectCourse } from "@/components/courseSelector";
+import { SelectCourse } from "@/components/selectCourse";
 import H1 from "@/components/h1";
-import { SelectSemester } from "@/components/semesterSelector";
+import { SelectSemester } from "@/components/selectSemester";
 import SubjectList from "@/components/subjectList";
+import CalcHeader from "@/components/calcHeader";
 
 export default function Page() {
   const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
@@ -13,9 +14,9 @@ export default function Page() {
   return (
     <main>
       <H1 className="my-8 text-white">Calculator</H1>
-      <ContentBlock className="min-h-[500px] flex flex-col p-4 gap-3 items-center">
+      <ContentBlock className="min-h-[500px] flex flex-col p-4 gap-2  items-center">
         <section className="space-y-2 items-center justify-center px-2">
-          <div className="flex space-x-2">
+          <div className="flex gap-4">
             <SelectCourse onValueChange={(value) => setSelectedCourse(value)} />
             <SelectSemester
               onValueChange={(value) =>
@@ -24,10 +25,11 @@ export default function Page() {
             />
           </div>
         </section>
-        <section className="overflow-x-scroll w-full">
-          <div className="min-w-[800px]">
-            <SubjectList course={selectedCourse} semester={selectedSemester} />
+        <section className=" overflow-x-scroll sm:overflow-x-scroll md:overflow-x-scroll lg:overflow-x-hidden w-full">
+          <div className="overflow-x-scroll sm:overflow-x-scroll md:overflow-x-scroll lg:overflow-x-hidden min-w-[800px]">
+            <CalcHeader />
           </div>
+          <SubjectList course={selectedCourse} semester={selectedSemester} />
         </section>
       </ContentBlock>
     </main>

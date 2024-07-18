@@ -75,3 +75,11 @@ export const getGradeColor = (grade: string) => {
       return "text-gray-600";
   }
 };
+
+export const validateInput = (value: string, max: number): string => {
+  let numValue = parseFloat(value);
+  if (isNaN(numValue)) return "";
+  if (numValue > max) return max.toString();
+  if (numValue % 0.5 !== 0) return Math.floor(numValue * 2) / 2 + "";
+  return numValue.toString();
+};

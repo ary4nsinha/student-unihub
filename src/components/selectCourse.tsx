@@ -16,7 +16,7 @@ export function SelectCourse({
 }) {
   return (
     <Select onValueChange={onValueChange}>
-      <SelectTrigger className="w-[180px]">
+      <SelectTrigger className="w-[160px]">
         <SelectValue placeholder="Select your Course" />
       </SelectTrigger>
       <SelectContent>

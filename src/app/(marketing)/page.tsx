@@ -1,7 +1,7 @@
 import ContentBlock from "@/components/contentBlock";
 import H1 from "@/components/h1";
-import { Button } from "@/components/ui/button";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+
+import { SignedOut, SignInButton} from "@clerk/nextjs";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -26,9 +26,11 @@ export default function Page() {
             <div>
               <Link href="/app/calculator">
                 <SignedOut>
-                  <Button>
-                    <SignInButton />
-                  </Button>
+                  <SignInButton>
+                    <button className="bg-zinc-900 text-white p-3 rounded-md">
+                      Get Started
+                    </button>
+                  </SignInButton>
                 </SignedOut>
               </Link>
             </div>
