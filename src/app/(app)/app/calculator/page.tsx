@@ -13,7 +13,7 @@ export default function Page() {
 
   return (
     <main>
-      <H1 className="my-8 text-white">Calculator</H1>
+      <H1 className="my-8 text-white">Semester GPA Calculator</H1>
       <ContentBlock className="min-h-[500px] flex flex-col p-4 gap-2  items-center">
         <section className="space-y-2 items-center justify-center px-2">
           <div className="flex gap-4">

@@ -1,4 +1,3 @@
-// components/CalcInput.tsx
 "use client";
 import { useState, useEffect } from "react";
 import { Input } from "./ui/input";
@@ -42,12 +41,15 @@ export default function CalcInput({
       } else {
         newGrade = getGradeForMarks(total);
       }
-      setGrade(newGrade);
-      onGradeUpdate(newGrade);
+
+      if (newGrade !== grade) {
+        setGrade(newGrade);
+        onGradeUpdate(newGrade);
+      }
     };
 
     calculateTotal();
-  }, [caI, caII, midSem, endSem, creditValue, onGradeUpdate]);
+  }, [caI, caII, midSem, endSem, creditValue, grade, onGradeUpdate]);
 
   const handleInputChange =
     (setter: React.Dispatch<React.SetStateAction<string>>, max: number) =>

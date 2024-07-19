@@ -83,3 +83,14 @@ export const validateInput = (value: string, max: number): string => {
   if (numValue % 0.5 !== 0) return Math.floor(numValue * 2) / 2 + "";
   return numValue.toString();
 };
+
+export const gradePointMapping: { [key: string]: number } = {
+  'A+': 10,
+  'A': 9,
+  'B+': 8,
+  'B': 7,
+  'C+': 6,
+  'C': 5,
+  'D': 4,
+  'F': 0, // Assuming 'F' or other unlisted grades should be 0
+};
