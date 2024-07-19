@@ -13,8 +13,10 @@ export default function Page() {
 
   return (
     <main>
-      <H1 className="my-8 text-white">Semester GPA Calculator</H1>
-      <ContentBlock className="min-h-[500px] flex flex-col p-4 gap-2  items-center">
+      <H1 className="my-4 text-white text-center sm:text-left">
+        Semester GPA Calculator
+      </H1>
+      <ContentBlock className="min-h-[500px] flex flex-col p-4 gap-2 items-center">
         <section className="space-y-2 items-center justify-center px-2">
           <div className="flex gap-4">
             <SelectCourse onValueChange={(value) => setSelectedCourse(value)} />
@@ -25,7 +27,7 @@ export default function Page() {
             />
           </div>
         </section>
-        <section className=" overflow-x-scroll sm:overflow-x-scroll md:overflow-x-scroll lg:overflow-x-hidden w-full">
+        <section className="overflow-x-scroll sm:overflow-x-scroll md:overflow-x-scroll lg:overflow-x-hidden w-full">
           <div className="overflow-x-scroll sm:overflow-x-scroll md:overflow-x-scroll lg:overflow-x-hidden min-w-[800px]">
             <CalcHeader />
           </div>

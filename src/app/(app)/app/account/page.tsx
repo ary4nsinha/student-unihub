@@ -6,7 +6,7 @@ import { SignedIn, SignOutButton, UserButton } from "@clerk/nextjs";
 export default async function Page() {
   return (
     <main className="flex flex-col">
-      <H1 className="my-8 text-white">Your Account</H1>
+      <H1 className="my-4 text-white text-center sm:text-left">Your Account</H1>
 
       <ContentBlock className="h-[400px]  flex w flex-col gap-8 justify-center items-center ">
         
