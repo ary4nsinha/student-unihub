@@ -38,15 +38,29 @@ export default function SubjectList({
             throw new Error("Failed to fetch subjects");
           }
           const fetchedSubjects: Subject[] = await response.json();
-          setSubjects(fetchedSubjects);
+
+          console.log("Fetched subjects:", fetchedSubjects);
+
+          if (!Array.isArray(fetchedSubjects) || fetchedSubjects.length === 0) {
+            throw new Error("Invalid or empty subjects data");
+          }
+
+          // Sort the subjects by credit value in descending order
+          const sortedSubjects = [...fetchedSubjects].sort(
+            (a, b) => b.creditValue - a.creditValue
+          );
+
+          console.log("Sorted subjects:", sortedSubjects);
+
+          setSubjects(sortedSubjects);
           setSubjectGrades(
-            fetchedSubjects.map((subject) => ({
+            sortedSubjects.map((subject) => ({
               creditValue: subject.creditValue,
               grade: "",
             }))
           );
         } catch (err) {
-          setError("Failed to fetch subjects");
+          setError("Failed to fetch or process subjects");
           console.error(err);
         }
       }
@@ -65,15 +79,24 @@ export default function SubjectList({
         0
       );
 
-      // Log total grade points for debugging
-      {/* console.log("Total Grade Points:", totalGradePoints);*/}
+      // Determine the divisor based on course and semester
+      let divisor = 210; // Default divisor
+      if (course === "B.Tech Biomed" && semester === 5) {
+        divisor = 200;
+      }
+      if (course === "B.Tech CSE" && semester === 3) {
+        divisor = 230;
+      }
+      if (course === "B.Tech AIDS" && semester === 3) {
+        divisor = 230;
+      }
 
-      const sgpa = (totalGradePoints / 210) * 10; // Adjust if needed
+      const sgpa = (totalGradePoints / divisor) * 10;
       setSgpa(sgpa);
     };
 
     calculateSGPA();
-  }, [subjectGrades]);
+  }, [subjectGrades, course, semester]);
 
   const handleGradeUpdate = (index: number, grade: string) => {
     const updatedGrades = [...subjectGrades];
@@ -105,8 +128,12 @@ export default function SubjectList({
         />
       ))}
       {sgpa !== null && (
-        <div className="text-center font-medium text-zinc-900/90">
-          <h1 className="py-2 text-base">SGPA: {sgpa.toFixed(2)}</h1>
+        <div className="text-left sm:text-center font-medium text-zinc-900/90">
+          <h1 className="py-2 text-base font-bold">SGPA: {sgpa.toFixed(2)}</h1>
+          <p className="text-xs text-red-500">
+            Disclaimer! The actual gpa might vary by 0.2 if there&apos;s a
+            change in credit allocation
+          </p>
         </div>
       )}
     </section>

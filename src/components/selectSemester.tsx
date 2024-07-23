@@ -22,11 +22,16 @@ export function SelectSemester({
       <SelectContent>
         <SelectGroup>
           <SelectLabel>Semester</SelectLabel>
+          {/* 
           <SelectItem value="sem1">Semester I</SelectItem>
-          <SelectItem value="sem3">Semester III</SelectItem>
+          
           <SelectItem value="sem4">Semester IV</SelectItem>
-          <SelectItem value="sem5">Semester V</SelectItem>
           <SelectItem value="sem7">Semester VII</SelectItem>
+              
+
+          */}
+          <SelectItem value="sem3">Semester III</SelectItem>
+          <SelectItem value="sem5">Semester V</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

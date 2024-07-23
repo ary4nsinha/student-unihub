@@ -9,7 +9,7 @@ export default function Page() {
     <main>
       <H1 className="my-4 text-white text-center sm:text-left">Academic Section</H1>
       <ContentBlock className="min-h-[500px] flex flex-col p-4 gap-2  items-center">
-        <div className="">sfsfs</div>
+        <div className="">To be added</div>
       </ContentBlock>
     </main>
   );

@@ -24,11 +24,9 @@ export function SelectCourse({
           <SelectLabel>Branch</SelectLabel>
           <SelectItem value="B.Tech AIDS">B.Tech AI & DS</SelectItem>
           <SelectItem value="B.Tech CSE">B.Tech CSE</SelectItem>
-          <SelectItem value="B.Tech Mechatronics">
-            B.Tech Mechatronics
-          </SelectItem>
-          <SelectItem value="B.Tech Biomed">B.Tech Biomed</SelectItem>
-          <SelectItem value="B.Tech Biotech">B.Tech Biotech</SelectItem>
+          <SelectItem value="B.Tech CSE-SE">B.Tech CSE-SE</SelectItem>
+          <SelectItem value="B.Tech CSE-CS">B.Tech CSE-CS</SelectItem>
+          <SelectItem value="B.Tech Biomedical">B.Tech Biomed</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

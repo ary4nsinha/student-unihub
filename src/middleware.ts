@@ -15,7 +15,7 @@ export default clerkMiddleware((auth, req) => {
 
   // If user is logged in and tries to access the home page, redirect to /app/calculator
   if (userId && path === '/') {
-    return NextResponse.redirect(new URL('/app/calculator', req.url));
+    return NextResponse.redirect(new URL('/app/calculator/sgpa', req.url));
   }
 
   // Protect /app routes

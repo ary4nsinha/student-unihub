@@ -1,7 +1,7 @@
 import ContentBlock from "@/components/contentBlock";
 import H1 from "@/components/h1";
 
-import { SignedOut, SignInButton} from "@clerk/nextjs";
+import { SignedOut, SignInButton } from "@clerk/nextjs";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +16,7 @@ export default function Page() {
         </div>
         <div className="items-center justify-center space-y-4 text-center">
           <H1 className="text-4xl font-bold">
-            ADYPU Student <span className="text-[#5DC9A8]">Unihub</span>
+            ADYPU Grade<span className="text-[#5DC9A8]">Calc</span>
           </H1>
           <blockquote className="mt-2 text-md pl-1 italic">
             &quot;A community effort, to make your college experience, just a
@@ -24,7 +24,7 @@ export default function Page() {
           </blockquote>
           <div>
             <div>
-              <Link href="/app/calculator">
+              <Link href="/app/calculator/sgpa">
                 <SignedOut>
                   <SignInButton>
                     <button className="bg-zinc-900 text-white p-3 rounded-md">
