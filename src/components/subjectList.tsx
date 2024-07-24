@@ -39,8 +39,6 @@ export default function SubjectList({
           }
           const fetchedSubjects: Subject[] = await response.json();
 
-          console.log("Fetched subjects:", fetchedSubjects);
-
           if (!Array.isArray(fetchedSubjects) || fetchedSubjects.length === 0) {
             throw new Error("Invalid or empty subjects data");
           }
@@ -49,8 +47,6 @@ export default function SubjectList({
           const sortedSubjects = [...fetchedSubjects].sort(
             (a, b) => b.creditValue - a.creditValue
           );
-
-          console.log("Sorted subjects:", sortedSubjects);
 
           setSubjects(sortedSubjects);
           setSubjectGrades(
