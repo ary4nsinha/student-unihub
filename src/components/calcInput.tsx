@@ -71,7 +71,7 @@ export default function CalcInput({
 
       <div>
         <Input
-          placeholder="0.0"
+          placeholder="0/20"
           type="number"
           step="0.5"
           min="0"
@@ -83,7 +83,7 @@ export default function CalcInput({
 
       <div>
         <Input
-          placeholder="0.0"
+          placeholder="0/20"
           type="number"
           step="0.5"
           min="0"
@@ -96,7 +96,7 @@ export default function CalcInput({
       {creditValue > 2 && (
         <div>
           <Input
-            placeholder="0.0"
+            placeholder="0/50"
             type="number"
             step="0.5"
             min="0"
@@ -109,7 +109,7 @@ export default function CalcInput({
       {creditValue === 2 && (
         <div>
           <Input
-            placeholder="0.0"
+            placeholder="0/60"
             type="number"
             step="0.5"
             min="0"
@@ -122,7 +122,7 @@ export default function CalcInput({
       {creditValue > 2 && (
         <div>
           <Input
-            placeholder="0.0"
+            placeholder="0/60"
             type="number"
             step="0.5"
             min="0"
