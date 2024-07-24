@@ -24,7 +24,7 @@ export default function AppHeader() {
   const activePathname = usePathname();
   
   return (
-    <header className="flex items-center border-b border-white/10 justify-between py-2">
+    <header className="flex items-center border-white/10 justify-between py-2 border-b-2 ">
       <Logo />
       <nav>
         <ul className="flex gap-4 text-base items-center">
