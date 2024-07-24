@@ -10,7 +10,7 @@ import React from "react";
 
 export default function Page() {
   return (
-    <div className="flex bg-[#5DC9A8] min-h-screen items-center justify-center flex-col max-w-[1050px] mx-auto px-4 ">
+    <div className="flex bg-[#2C9676] min-h-screen items-center justify-center flex-col max-w-[1050px] mx-auto px-4 ">
       <ContentBlock className="height-[450px] w-fit flex flex-col lg:flex-row xl:flex-row items-center justify-center gap-10 p-4 py-12">
         <div className="p-2">
           <Image width={230} height={230} src="/logo.svg" alt="logo" />
