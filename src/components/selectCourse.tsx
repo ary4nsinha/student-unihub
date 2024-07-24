@@ -11,11 +11,13 @@ import {
 
 export function SelectCourse({
   onValueChange,
+  value,
 }: {
   onValueChange: (value: string) => void;
+  value?: string;
 }) {
   return (
-    <Select onValueChange={onValueChange}>
+    <Select onValueChange={onValueChange} value={value}>
       <SelectTrigger className="w-[160px]">
         <SelectValue placeholder="Select your Course" />
       </SelectTrigger>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CalcInput from "./calcInput";
 import { gradePointMapping } from "@/lib/utils";
+import { getSubjects } from "@/actions/actions"; // Adjust this import path as needed
 
 interface Subject {
   name: string;
@@ -23,27 +24,20 @@ export default function SubjectList({
   const [error, setError] = useState<string | null>(null);
   const [subjectGrades, setSubjectGrades] = useState<SubjectGrade[]>([]);
   const [sgpa, setSgpa] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function fetchSubjects() {
       if (course && semester) {
+        setIsLoading(true);
         setError(null);
         try {
-          const response = await fetch(
-            `/api/subjects?branch=${encodeURIComponent(
-              course
-            )}&semester=${semester}`
-          );
-          if (!response.ok) {
-            throw new Error("Failed to fetch subjects");
-          }
-          const fetchedSubjects: Subject[] = await response.json();
+          const fetchedSubjects = await getSubjects(course, semester);
 
           if (!Array.isArray(fetchedSubjects) || fetchedSubjects.length === 0) {
             throw new Error("Invalid or empty subjects data");
           }
 
-          // Sort the subjects by credit value in descending order
           const sortedSubjects = [...fetchedSubjects].sort(
             (a, b) => b.creditValue - a.creditValue
           );
@@ -58,7 +52,13 @@ export default function SubjectList({
         } catch (err) {
           setError("Failed to fetch or process subjects");
           console.error(err);
+        } finally {
+          setIsLoading(false);
         }
+      } else {
+        setSubjects([]);
+        setSubjectGrades([]);
+        setSgpa(null);
       }
     }
 
@@ -75,7 +75,6 @@ export default function SubjectList({
         0
       );
 
-      // Determine the divisor based on course and semester
       let divisor = 210; // Default divisor
       if (course === "B.Tech Biomed" && semester === 5) {
         divisor = 200;
@@ -100,16 +99,24 @@ export default function SubjectList({
     setSubjectGrades(updatedGrades);
   };
 
-  if (error)
-    return (
-      <div className="text-center font-medium text-zinc-900/90">
-        Error: {error}
-      </div>
-    );
   if (!course || !semester)
     return (
       <div className="text-center font-medium text-zinc-900/90">
         <h1 className="py-2 text-base">Please select a course and semester</h1>
+      </div>
+    );
+
+  if (isLoading)
+    return (
+      <div className="text-center font-medium text-zinc-900/90">
+        <h1 className="py-2 text-base">Loading subjects...</h1>
+      </div>
+    );
+
+  if (error)
+    return (
+      <div className="text-center font-medium text-zinc-900/90">
+        Error: {error}
       </div>
     );
 
