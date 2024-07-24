@@ -59,9 +59,9 @@ export default function CalcInput({
     };
 
   return (
-    <section className="grid py-2 items-center grid-cols-8 gap-8 text-center border-b-2 border-zinc-900/30 rounded-md bg-zinc-400/20">
+    <section className="grid py-2 items-center grid-cols-8 gap-8 text-center border-b-2 border-zinc-900/30 rounded-md bg-zinc-200/30">
       <div className="flex items-center justify-center w-20 ">
-        <h1 className="text-center text-xs font-medium text-zinc-900 tracking-tighter">
+        <h1 className="text-center text-xs font-semibold text-zinc-900 tracking-tighter">
           {subject}
         </h1>
       </div>
