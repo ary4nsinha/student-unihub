@@ -27,8 +27,8 @@ export default function Page() {
             />
           </div>
         </section>
-        <section className="overflow-x-scroll sm:overflow-x-scroll md:overflow-x-scroll lg:overflow-x-hidden w-full">
-          <div className="overflow-x-scroll sm:overflow-x-scroll md:overflow-x-scroll lg:overflow-x-hidden min-w-[800px]">
+        <section className="overflow-x-scroll sm:overflow-x-scroll md:overflow-x-hidden lg:overflow-x-hidden w-full">
+          <div className="min-w-[800px]">
             <CalcHeader />
           </div>
           <SubjectList course={selectedCourse} semester={selectedSemester} />
