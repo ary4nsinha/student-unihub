@@ -1,5 +1,6 @@
 import ContentBlock from "@/components/contentBlock";
 import H1 from "@/components/h1";
+import Logo from "@/components/logo";
 
 import { SignedOut, SignInButton } from "@clerk/nextjs";
 
@@ -11,12 +12,12 @@ export default function Page() {
   return (
     <div className="flex bg-[#5DC9A8] min-h-screen items-center justify-center flex-col max-w-[1050px] mx-auto px-4 ">
       <ContentBlock className="height-[450px] w-fit flex flex-col lg:flex-row xl:flex-row items-center justify-center gap-10 p-4 py-12">
-        <div className="p-2 bg-zinc-200">
-          <Image src="/adypu.jpg" alt="logo" height={230} width={230} />
+        <div className="p-2">
+          <Image width={230} height={230} src="/logo.svg" alt="logo" />
         </div>
         <div className="items-center justify-center space-y-4 text-center">
           <H1 className="text-4xl font-bold">
-            ADYPU Grade<span className="text-[#5DC9A8]">Calc</span>
+            ADYPU Grade<span className="text-[#2C9676]">Calc</span>
           </H1>
           <blockquote className="mt-2 text-md pl-1 italic">
             &quot;A community effort, to make your college experience, just a
