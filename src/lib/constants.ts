@@ -14,7 +14,7 @@ export const faqItems: FAQItem[] = [
   {
     id: "gpa-tips",
     title: "General advice to maintain GPA",
-    content: "Focus on getting good marks in CA-1 & 2. If you manage to score 18 or above in both CAs it goes a long way as getting decent internal marks will already land you in the 7 range. Plus you've already studied units 1 to 4 thoroughly so that leaves studying unit 5 for the end term. Focusing on CAs can really help set you up to a good SGPA relatively easily",
+    content: "Focus on getting good marks in CA-1 & CA-2. If you manage to score 18 or above in both CAs it goes a long way as getting decent internal marks will already land you in the 7 range. Plus you've already studied units 1 to 4 thoroughly so that leaves studying unit 5 for the end term. Focusing on CAs can really help set you up to a good SGPA relatively easily",
   },
   {
     id: "volunteering",
