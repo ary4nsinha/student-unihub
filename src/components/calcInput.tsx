@@ -36,10 +36,30 @@ export default function CalcInput({
       setTotalMarks(total);
 
       let newGrade;
-      if (creditValue === 2) {
+
+      // Check for end sem exam less than 18
+      const endSemMarks = parseFloat(endSem) || 0;
+      if (endSemMarks < 18 && creditValue > 2) {
+        newGrade = "F";
+      }
+      // Check for CA1 + CA2 + Mid Sem less than 27 for 3 credit subjects
+      else if (creditValue > 2) {
+        const internalTotal =
+          (parseFloat(caI) || 0) +
+          (parseFloat(caII) || 0) +
+          (parseFloat(midSem) || 0);
+        if (internalTotal < 27) {
+          newGrade = "F";
+        } else {
+          newGrade =
+            creditValue === 2
+              ? getGradeForTwoCredits(total)
+              : getGradeForMarks(total);
+        }
+      }
+      // For 2 credit subjects, use the existing logic
+      else {
         newGrade = getGradeForTwoCredits(total);
-      } else {
-        newGrade = getGradeForMarks(total);
       }
 
       if (newGrade !== grade) {

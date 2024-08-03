@@ -26,7 +26,7 @@ export default function Page() {
     const semesterNumber = value ? Number(value.replace("sem", "")) : null;
     setSelectedSemester(semesterNumber);
     if (!selectedCourse) {
-      setSelectedCourse(null);  // Reset course if it's not selected
+      setSelectedCourse(null); // Reset course if it's not selected
     }
   };
 
@@ -45,6 +45,7 @@ export default function Page() {
             <SelectSemester
               onValueChange={handleSemesterChange}
               value={selectedSemester ? `sem${selectedSemester}` : undefined}
+              selectedCourse={selectedCourse}
             />
           </div>
         </section>
