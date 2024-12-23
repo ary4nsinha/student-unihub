@@ -85,6 +85,9 @@ export default function SubjectList({
       if (course === "B.Tech AIDS" && semester === 3) {
         divisor = 230;
       }
+      if (course === "B.Tech Mechatronics" && semester === 7) {
+        divisor = 160;
+      }
 
       const sgpa = (totalGradePoints / divisor) * 10;
       setSgpa(sgpa);
@@ -131,9 +134,9 @@ export default function SubjectList({
         />
       ))}
       {sgpa !== null && (
-        <div className="text-left sm:text-center font-medium text-zinc-900/90">
+        <div className="text-left select-none sm:text-center font-medium text-zinc-900/90">
           <h1 className="py-2 text-base font-bold">SGPA: {sgpa.toFixed(2)}</h1>
-          <p className="text-xs text-red-500">
+          <p className="text-md text-red-500">
             Disclaimer! The actual gpa might vary by 0.2 if there&apos;s a
             change in credit allocation
           </p>

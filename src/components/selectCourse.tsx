@@ -29,6 +29,7 @@ export function SelectCourse({
           <SelectItem value="B.Tech CSE-SE">B.Tech CSE-SE</SelectItem>
           <SelectItem value="B.Tech CSE-CS">B.Tech CSE-CS</SelectItem>
           <SelectItem value="B.Tech Biomedical">B.Tech Biomed</SelectItem>
+          <SelectItem value="B.Tech Mechatronics">B.Tech Mechatronics</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

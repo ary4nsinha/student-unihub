@@ -1,29 +1,27 @@
-import { NextResponse } from 'next/server';
-import { 
-  clerkMiddleware, 
-  createRouteMatcher, 
-  getAuth 
-} from '@clerk/nextjs/server';
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
-const isProtectedRoute = createRouteMatcher([
-  '/app(.*)',
-]);
+const isProtectedRoute = createRouteMatcher(['/app(.*)']);
 
-export default clerkMiddleware((auth, req) => {
-  const { userId } = auth();
+export default clerkMiddleware(async (auth, req) => {
+  const { userId, redirectToSignIn } = await auth();
   const path = req.nextUrl.pathname;
 
   // If user is logged in and tries to access the home page, redirect to /app/calculator
   if (userId && path === '/') {
-    return NextResponse.redirect(new URL('/app/calculator/sgpa', req.url));
+    return Response.redirect(new URL('/app/calculator/sgpa', req.url));
   }
 
-  // Protect /app routes
-  if (isProtectedRoute(req)) {
-    auth().protect();
+  // If not logged in and trying to access protected route
+  if (!userId && isProtectedRoute(req)) {
+    return redirectToSignIn();
   }
 });
 
 export const config = {
-  matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
+  matcher: [
+    // Skip Next.js internals and all static files, unless found in search params
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    // Always run for API routes
+    '/(api|trpc)(.*)',
+  ],
 };

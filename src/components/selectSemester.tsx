@@ -16,6 +16,7 @@ const courseSemesters: { [key: string]: string[] } = {
   "B.Tech CSE-SE": ["sem5"],
   "B.Tech CSE-CS": [ "sem5"],
   "B.Tech Biomedical": ["sem3", "sem5"],
+  "B.Tech Mechatronics": ["sem7"],
 };
 
 export function SelectSemester({
