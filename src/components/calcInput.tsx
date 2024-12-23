@@ -126,7 +126,7 @@ export default function CalcInput({
         <>
           <div>
             <Input
-              placeholder="Review 1 (0/20)"
+              placeholder="0/20"
               type="number"
               step="0.5"
               min="0"
@@ -137,7 +137,7 @@ export default function CalcInput({
           </div>
           <div>
             <Input
-              placeholder="Review 2 (0/30)"
+              placeholder="0/30"
               type="number"
               step="0.5"
               min="0"
@@ -148,7 +148,7 @@ export default function CalcInput({
           </div>
           <div>
             <Input
-              placeholder="Final (0/100)"
+              placeholder="0/100"
               type="number"
               step="0.5"
               min="0"
