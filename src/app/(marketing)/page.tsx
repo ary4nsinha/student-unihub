@@ -28,7 +28,7 @@ export default function Page() {
           </blockquote>
           <div>
             <div>
-              <Link href="/app/calculator/sgpa">
+             
                 <SignedOut>
                   <SignInButton fallbackRedirectUrl="/" signUpFallbackRedirectUrl="/app/calculator/sgpa">
                     <button className="bg-zinc-900 text-white p-3 rounded-md">
@@ -36,7 +36,7 @@ export default function Page() {
                     </button>
                   </SignInButton>
                 </SignedOut>
-              </Link>
+            
             </div>
           </div>
         </div>
