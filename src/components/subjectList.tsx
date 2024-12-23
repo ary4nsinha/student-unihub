@@ -138,7 +138,7 @@ export default function SubjectList({
           <h1 className="py-2 text-base font-bold">SGPA: {sgpa.toFixed(2)}</h1>
           <p className="text-md text-red-500">
             Disclaimer! The actual gpa might vary by 0.2 if there&apos;s a
-            change in credit allocation.
+            change in credit allocation...
           </p>
         </div>
       )}
