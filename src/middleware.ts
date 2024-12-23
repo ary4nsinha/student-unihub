@@ -1,16 +1,28 @@
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
-// Define routes that should be protected
-const isProtectedRoute = createRouteMatcher([
-  '/app(.*)', // Protects all routes under /app/
-]);
+const isProtectedRoute = createRouteMatcher(['/app(.*)'])
 
 export default clerkMiddleware(async (auth, req) => {
-  if (isProtectedRoute(req)) {
-    auth.protect(); // Protect the route if it matches the defined criteria
+  const { userId } = await auth()
+  const path = req.nextUrl.pathname
+  
+  // Redirect signed-in users from home page to app
+  if (userId && path === '/') {
+    return new Response(null, {
+      status: 302,
+      headers: { Location: '/app/calculator/sgpa' },
+    })
   }
-});
+
+  // Protect /app routes
+  if (isProtectedRoute(req)) await auth.protect()
+})
 
 export const config = {
-  matcher: ["/((?!.+.[w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
-};
+  matcher: [
+    // Skip Next.js internals and all static files
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    // Always run for API routes
+    '/(api|trpc)(.*)',
+  ],
+}
