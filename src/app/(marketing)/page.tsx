@@ -30,7 +30,7 @@ export default function Page() {
             <div>
               <Link href="/app/calculator/sgpa">
                 <SignedOut>
-                  <SignInButton>
+                  <SignInButton fallbackRedirectUrl="/" signUpFallbackRedirectUrl="/app/calculator/sgpa">
                     <button className="bg-zinc-900 text-white p-3 rounded-md">
                       Get Started
                     </button>
