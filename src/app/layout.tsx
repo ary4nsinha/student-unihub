@@ -18,7 +18,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      signInFallbackRedirectUrl="/app/calculator/sgpa"
+      signUpFallbackRedirectUrl="/app/calculator/sgpa"
+    >
       <html lang="en">
         <body
           className={`${inter.className} text-sm text-zinc-900 bg-[#E5E8EC] min-h-screen  `}

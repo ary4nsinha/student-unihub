@@ -1,21 +1,10 @@
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
-const isProtectedRoute = createRouteMatcher(['/app(.*)']);
+const isProtectedRoute = createRouteMatcher(['/app(.*)'])
 
 export default clerkMiddleware(async (auth, req) => {
-  const { userId, redirectToSignIn } = await auth();
-  const path = req.nextUrl.pathname;
-
-  // If user is logged in and tries to access the home page, redirect to /app/calculator
-  if (userId && path === '/') {
-    return Response.redirect(new URL('/app/calculator/sgpa', req.url));
-  }
-
-  // If not logged in and trying to access protected route
-  if (!userId && isProtectedRoute(req)) {
-    return redirectToSignIn();
-  }
-});
+  if (isProtectedRoute(req)) await auth.protect()
+})
 
 export const config = {
   matcher: [
@@ -24,4 +13,4 @@ export const config = {
     // Always run for API routes
     '/(api|trpc)(.*)',
   ],
-};
+}
