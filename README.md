@@ -78,9 +78,6 @@ We welcome contributions! Here's how you can help:
 - Semester GPA tracking over time
 - Export results as PDF
 - Dark mode support
-- Multiple language support
-- User accounts to save progress
-- Integration with university systems
 
 ## 📄 License
 
