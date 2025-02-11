@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#  GradeCalc
+A web-based tool that helps students calculate their Semester Grade Point Average (SGPA) easily and efficiently. Built with Next.js, this calculator provides instant SGPA calculations along with helpful academic advice.
 
-## Getting Started
+## ✨ Features
 
-First, run the development server:
+- Quick and accurate SGPA calculation
+- User-friendly interface for inputting course marks
+- General academic advice and tips
+- Responsive design that works on both desktop and mobile devices
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [https://gradecalc.xyz/] to try out the calculator!
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [Next.js](https://nextjs.org/) - React framework
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- Modern JavaScript (ES6+)
 
-## Learn More
+## 🏃‍♂️ Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js 18.x or later
+- npm, yarn, or pnpm
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Installation
 
-## Deploy on Vercel
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/sgpa-calculator.git
+   cd sgpa-calculator
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how you can help:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Development Guidelines
+
+- Follow the existing code style and structure
+- Add comments for complex logic
+- Update documentation as needed
+- Test your changes thoroughly
+- Create issues for major changes and enhancements
+
+## 🎯 Potential Features to Implement
+
+- Support for different grading systems
+- Semester GPA tracking over time
+- Export results as PDF
+- Dark mode support
+- Multiple language support
+- User accounts to save progress
+- Integration with university systems
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Thanks to all contributors who help improve this tool
+
+## 📞 Contact
+
+Aryan Sinha
+
+Project Link: [https://github.com/your-username/sgpa-calculator](https://github.com/your-username/sgpa-calculator)
+
+---
+
+Built to help out students at ADYPU
