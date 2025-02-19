@@ -87,12 +87,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Thanks to all contributors who help improve this tool
 
-## 📞 Contact
-
-Aryan Sinha
-
-Project Link: [https://github.com/your-username/sgpa-calculator](https://github.com/your-username/sgpa-calculator)
-
 ---
 
 Built to help out students at ADYPU
