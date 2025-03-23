@@ -11,7 +11,7 @@ export default clerkMiddleware(async (auth, req) => {
   if (userId && path === '/') {
     return NextResponse.redirect(new URL('/app/calculator/sgpa', req.url))
   }
-
+  //sdsds
   // Protect /app routes
   if (isProtectedRoute(req)) await auth.protect()
 })
